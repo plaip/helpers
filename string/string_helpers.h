@@ -9,9 +9,15 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
 
-int8_t reverse_char(char *str) 
-{ 
+/*
+ * Reverse string buffer.
+ *
+ * Return error code:
+ *  0: String correctly reversed.
+ * -1: `str` pointer is NULL.
+ */
+int8_t reverse_char(char *str);
