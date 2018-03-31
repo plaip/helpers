@@ -7,19 +7,18 @@
  * Helpers to manipulate strings
  *
  */
-#include <stdio.h>
-#include <stdlib.h> 
-#include <string.h>
-#include <stdint.h>
 
-int8_t reverse_char(char *str) 
-{ 
+#include "string_helpers.h"
+
+int8_t reverse_char(char *str)
+{
   uint32_t str_len = strlen(str);
   int8_t   result  = 0;
 
   if (str == NULL)
   {
     result = -1;
+    goto exit_now;
   }
   else
   {
@@ -27,5 +26,7 @@ int8_t reverse_char(char *str)
     {
       str[idx]^=str[last_idx]^=str[idx]^=str[last_idx];
     }
-  }  
+  }
+exit_now:
+  return result;
 }
